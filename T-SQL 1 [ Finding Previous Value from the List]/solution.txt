@@ -1,0 +1,21 @@
+create table ex (
+  A int,
+  B int,
+  C decimal(20,4)
+);
+
+insert into ex
+select 275, 2005, '1.00'
+union all
+select 275, 2005, '2.00'
+union all
+select 275, 2005, '3.00'
+union all
+select 275, 2005, '4.00'
+union all
+select 275, 2005, '5.00'
+union all
+select 275, 2005, '6.00';
+
+select * from ex;
+select row_number() over() as ROWNUM, A, B, C from ex;
